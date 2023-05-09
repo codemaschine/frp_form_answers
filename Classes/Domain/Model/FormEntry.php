@@ -64,7 +64,7 @@ class FormEntry extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     public function getAnswers()
     {
-        return json_decode($this->answers, 1);
+        return json_decode($this->answers, 1) ?? [];
     }
 
     /**
