@@ -259,7 +259,7 @@ class FormEntryController extends ActionController
     public function initializeExportAction(){
 
         $args = $this->request->getArguments();
-        $format = $args['format'];
+        $format = $args['format'] ?? 'Xls';
         // $this->filename = $args['formEntryDemand']['formName'];
 
         $charset = (strlen($args['formEntryDemand']['charset'] ?? '') > 0 ? $args['formEntryDemand']['charset'] : 'iso-8859-1');
@@ -300,7 +300,7 @@ class FormEntryController extends ActionController
     public function exportAction(\Frappant\FrpFormAnswers\Domain\Model\FormEntryDemand $formEntryDemand = null)
     {
 
-        $format = $this->request->getArguments()['format'];
+        $format = $this->request->getArguments()['format'] ?? 'Xls';
         $formEntryDemand->setAllPids($this->request->getArguments()['allPids'] ?? false);
         $pid = $_GET['id'];
 
