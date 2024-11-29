@@ -1,8 +1,18 @@
 <?php
 namespace Frappant\FrpFormAnswers\View\FormEntry;
 
+use Exception;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+if (!class_exists(Spreadsheet::class)) {
+    $extensionPath = dirname(dirname(dirname(__DIR__)));
+    $composerAutoloadFile = $extensionPath . '/.Build/vendor/autoload.php';
+    if (!file_exists($composerAutoloadFile)) {
+        throw new Exception('Run "composer install" in ' . $extensionPath);
+    }
+    require_once $composerAutoloadFile;
+}
 
 /***************************************************************
  *

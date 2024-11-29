@@ -4,27 +4,25 @@
     "description": "Adds the possibility, as a finisher, to save and export the form entries from customers.",
     "homepage": "https://frappant.ch",
     "require": {
-        "typo3/cms-core": "^12.4",
-        "phpoffice/phpspreadsheet": "^1.22"
+        "phpoffice/phpspreadsheet": "^2.3"
     },
     "license": "GPL-2.0+",
     "autoload": {
         "psr-4": {
-        "Frappant\\FrpFormAnswers\\": "Classes"
+            "Frappant\\FrpFormAnswers\\": "Classes"
         }
     },
     "config": {
         "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin"
+        "bin-dir": ".Build/bin",
+        "platform": {
+            "php": "8.3"
+        }
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        },
         "typo3/cms": {
-        "cms-package-dir": "{$vendor-dir}/typo3/cms",
-        "web-dir": ".Build/web",
-        "extension-key": "frp_form_answers"
+            "web-dir": ".Build/web",
+            "extension-key": "frp_form_answers"
         }
     }
 }
